@@ -10,6 +10,7 @@
 		384209EA1D9B432A00617E27 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 384209E91D9B432A00617E27 /* main.cpp */; };
 		384209F11D9B43AA00617E27 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 384209F01D9B43AA00617E27 /* OpenGL.framework */; };
 		384209F51D9B446000617E27 /* libglfw3.3.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 384209F41D9B446000617E27 /* libglfw3.3.2.dylib */; };
+		38420A011D9D5F0300617E27 /* libfreeimage-3.17.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 38420A001D9D5F0300617E27 /* libfreeimage-3.17.0.dylib */; };
 		96C8513C1D9CBA4C00419EBF /* libGLEW.2.0.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 384209F21D9B444800617E27 /* libGLEW.2.0.0.dylib */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +32,9 @@
 		384209F01D9B43AA00617E27 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		384209F21D9B444800617E27 /* libGLEW.2.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libGLEW.2.0.0.dylib; path = ../../../../usr/local/Cellar/glew/2.0.0/lib/libGLEW.2.0.0.dylib; sourceTree = "<group>"; };
 		384209F41D9B446000617E27 /* libglfw3.3.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libglfw3.3.2.dylib; path = ../../../../usr/local/Cellar/glfw3/3.2.1/lib/libglfw3.3.2.dylib; sourceTree = "<group>"; };
+		384209FA1D9D5E8F00617E27 /* libfreeimage-3.17.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libfreeimage-3.17.0.dylib"; path = "../FreeImage/Dist/libfreeimage-3.17.0.dylib"; sourceTree = "<group>"; };
+		384209FF1D9D5F0300617E27 /* FreeImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FreeImage.h; sourceTree = "<group>"; };
+		38420A001D9D5F0300617E27 /* libfreeimage-3.17.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = "libfreeimage-3.17.0.dylib"; sourceTree = "<group>"; };
 		96C8513E1D9D07B900419EBF /* Shader.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Shader.hpp; sourceTree = "<group>"; };
 		96C851411D9D0A2E00419EBF /* shader.vs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = shader.vs; sourceTree = "<group>"; };
 		96C851421D9D0A5400419EBF /* shader.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = shader.frag; sourceTree = "<group>"; };
@@ -44,6 +48,7 @@
 				96C8513C1D9CBA4C00419EBF /* libGLEW.2.0.0.dylib in Frameworks */,
 				384209F51D9B446000617E27 /* libglfw3.3.2.dylib in Frameworks */,
 				384209F11D9B43AA00617E27 /* OpenGL.framework in Frameworks */,
+				38420A011D9D5F0300617E27 /* libfreeimage-3.17.0.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -53,6 +58,7 @@
 		384209DD1D9B432A00617E27 = {
 			isa = PBXGroup;
 			children = (
+				384209FA1D9D5E8F00617E27 /* libfreeimage-3.17.0.dylib */,
 				384209F41D9B446000617E27 /* libglfw3.3.2.dylib */,
 				384209F21D9B444800617E27 /* libGLEW.2.0.0.dylib */,
 				384209F01D9B43AA00617E27 /* OpenGL.framework */,
@@ -72,12 +78,22 @@
 		384209E81D9B432A00617E27 /* openGL_GLFW_GLEW */ = {
 			isa = PBXGroup;
 			children = (
+				384209FE1D9D5F0300617E27 /* FreeImage */,
 				384209E91D9B432A00617E27 /* main.cpp */,
 				96C8513E1D9D07B900419EBF /* Shader.hpp */,
 				96C851411D9D0A2E00419EBF /* shader.vs */,
 				96C851421D9D0A5400419EBF /* shader.frag */,
 			);
 			path = openGL_GLFW_GLEW;
+			sourceTree = "<group>";
+		};
+		384209FE1D9D5F0300617E27 /* FreeImage */ = {
+			isa = PBXGroup;
+			children = (
+				384209FF1D9D5F0300617E27 /* FreeImage.h */,
+				38420A001D9D5F0300617E27 /* libfreeimage-3.17.0.dylib */,
+			);
+			path = FreeImage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,6 +248,7 @@
 					"$(inherited)",
 					/usr/local/Cellar/glew/2.0.0/lib,
 					/usr/local/Cellar/glfw3/3.2.1/lib,
+					"$(PROJECT_DIR)/openGL_GLFW_GLEW/FreeImage",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -245,6 +262,7 @@
 					"$(inherited)",
 					/usr/local/Cellar/glew/2.0.0/lib,
 					/usr/local/Cellar/glfw3/3.2.1/lib,
+					"$(PROJECT_DIR)/openGL_GLFW_GLEW/FreeImage",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
