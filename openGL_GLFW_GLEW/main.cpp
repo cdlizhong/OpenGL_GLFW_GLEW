@@ -66,7 +66,6 @@ int main(void)
 #define SHADER_VS "/Users/cdlizhong/Documents/OpenGL_GLFW_GLEW/openGL_GLFW_GLEW/shader.vs"
 #define SHADER_FRAG "/Users/cdlizhong/Documents/OpenGL_GLFW_GLEW/openGL_GLFW_GLEW/shader.frag"
 
-#include "SOIL.h"
 // Function prototypes
 void key_callback(GLFWwindow* window, int key, int scancode, int action, int mode);
 
@@ -76,8 +75,6 @@ const GLuint WIDTH = 800, HEIGHT = 600;
 // The MAIN function, from here we start the application and run the game loop
 int main()
 {
-    int w, h;
-    unsigned char* image = SOIL_load_image("container.jpg", &w, &h, 0, SOIL_LOAD_RGB);
 
     
     std::cout << "Starting GLFW context, OpenGL 3.3" << std::endl;
